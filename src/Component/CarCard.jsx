@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const CarCard = ({image,title,description,price,mileage,color,_id}) => {
     let navigate=useNavigate()
     let deleteData=(id)=>{
-        fetch(`http://localhost:8080/car/delete/${id}`,{
+        fetch(`https://backend-done.onrender.com/car/delete/${id}`,{
             method:"DELETE",
             headers:{
                 "Authorization":`Bearer ${localStorage.getItem("token")}`

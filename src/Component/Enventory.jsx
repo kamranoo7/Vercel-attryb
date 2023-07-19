@@ -29,7 +29,7 @@ const Enventory = () => {
         
 
         
-        fetch("http://localhost:8080/enventory/add",{
+        fetch("https://backend-done.onrender.com/enventory/add",{
             method:"POST",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,
@@ -77,7 +77,7 @@ const Enventory = () => {
         <br />
         <label style={{color:"white"}} htmlFor="">Registration_Place</label>
         <br />
-        <Input style={{color:"white"}} type="number" placeholder='Enter Registration Place' value={registration_place} onChange={(e)=>setRegistration_place(e.target.value)} />
+        <Input style={{color:"white"}} type="text" placeholder='Enter Registration Place' value={registration_place} onChange={(e)=>setRegistration_place(e.target.value)} />
         <br />
         <br />
       <Button style={{backgroundColor:"white"}} onClick={handleSubmit}>Submit</Button>

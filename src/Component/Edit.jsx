@@ -18,7 +18,7 @@ export function Edit() {
     getdata()
     },[])
     let getdata=()=>{
-        fetch("http://localhost:8080/car/",{
+        fetch("https://backend-done.onrender.com/car/",{
         headers:{
             "Authorization":`Bearer ${localStorage.getItem("token")}`,
             
@@ -42,7 +42,7 @@ export function Edit() {
         
 
         
-        fetch(`http://localhost:8080/car/update/${id}`,{
+        fetch(`https://backend-done.onrender.com/car/update/${id}`,{
             method:"PATCH",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,

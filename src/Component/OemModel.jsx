@@ -4,7 +4,7 @@ import { Button, Input } from '@chakra-ui/react'
 const OemModel = () => {
    let [data,setData]=useState("")
     let model=()=>{
-        fetch("http://localhost:8080/oem/",{
+        fetch("https://backend-done.onrender.com/oem/",{
             headers:{
                 "Authorization":`Bearer ${localStorage.getItem("token")}`,
                 
@@ -39,9 +39,9 @@ const OemModel = () => {
                 <td style={{border:"1px solid black"}}>{el.model_name}</td>
                 <td style={{border:"1px solid black"}}>{el.year}</td>
                 <td style={{border:"1px solid black"}}>{el.list_price}</td>
-                <td style={{border:"1px solid black"}}>{el.color}</td>
-                <td style={{border:"1px solid black"}}>{el.mileage}</td>
-                <td style={{border:"1px solid black"}}>{el.max_speed}</td>
+                <td style={{border:"1px solid black"}}>{el.colors}</td>
+                <td style={{border:"1px solid black"}}>{el.mileage}km/h</td>
+                <td style={{border:"1px solid black"}}>{el.max_speed}km/s</td>
                 <td style={{border:"1px solid black"}}>{el.power}</td>
                 </tr>
             </table>

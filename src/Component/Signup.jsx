@@ -17,7 +17,7 @@ let handleSubmit=()=>{
        name,
        gender
     }
-    fetch("http://localhost:8080/users/register",{
+    fetch("https://backend-done.onrender.com/users/register",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

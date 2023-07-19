@@ -29,7 +29,7 @@ const Addcar = () => {
         
 
         
-        fetch("http://localhost:8080/car/add",{
+        fetch("https://backend-done.onrender.com/car/add",{
             method:"POST",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,

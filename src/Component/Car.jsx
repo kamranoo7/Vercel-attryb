@@ -30,7 +30,7 @@ const Dasboard = () => {
         
 
         
-        fetch("http://localhost:8080/car/cadd",{
+        fetch("https://backend-done.onrender.com/car/cadd",{
             method:"POST",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,
@@ -49,7 +49,7 @@ useEffect(()=>{
 getdata()
 },[])
 let getdata=()=>{
-    fetch("http://localhost:8080/car/",{
+    fetch("https://backend-done.onrender.com/car/",{
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`,
         
@@ -61,7 +61,7 @@ let getdata=()=>{
 }
 //Ascending
 let sort1=()=>{
-    fetch(`http://localhost:8080/car/ascending`,{
+    fetch(`https://backend-done.onrender.com/car/ascending`,{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -77,7 +77,7 @@ let sort1=()=>{
 }
 //Descending
 let sort2=()=>{
-    fetch(`http://localhost:8080/car/descending`,{
+    fetch(`https://backend-done.onrender.com/car/descending`,{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -93,7 +93,7 @@ let sort2=()=>{
 }
 //Filtering
 let filter1=()=>{
-    fetch(`http://localhost:8080/car/grey`,{
+    fetch(`https://backend-done.onrender.com/car/grey`,{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -107,7 +107,7 @@ let filter1=()=>{
 
 }
 let filte2=()=>{
-    fetch(`http://localhost:8080/car/red`,{
+    fetch(`https://backend-done.onrender.com/car/red`,{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -121,7 +121,7 @@ let filte2=()=>{
 
 }
 let filter3=()=>{
-    fetch('http://localhost:8080/car/black',{
+    fetch('https://backend-done.onrender.com/car/black',{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -135,7 +135,7 @@ let filter3=()=>{
 
 }
 let filter4=()=>{
-    fetch('http://localhost:8080/car/white',{
+    fetch('https://backend-done.onrender.com/car/white',{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -150,7 +150,7 @@ let filter4=()=>{
 }
 //Delete
 let deleteData=(id)=>{
-    fetch(`http://localhost:8080/car/delete/${id}`,{
+    fetch(`https://backend-done.onrender.com/car/delete/${id}`,{
         method:"DELETE",
         headers:{
             "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -166,7 +166,7 @@ let deleteData=(id)=>{
 }
 //Mileage-10-15Km
 let Mileage1=()=>{
-    fetch('http://localhost:8080/car/mileage1',{
+    fetch('https://backend-done.onrender.com/car/mileage1',{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -181,7 +181,7 @@ let Mileage1=()=>{
 }
 //Mileage-16-20Km
 let Mileage2=()=>{
-    fetch('http://localhost:8080/car/mileage2',{
+    fetch('https://backend-done.onrender.com/car/mileage2',{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
@@ -196,7 +196,7 @@ let Mileage2=()=>{
 }
 //Mileage-21-25Km
 let Mileage3=()=>{
-    fetch('http://localhost:8080/car/mileage3',{
+    fetch('https://backend-done.onrender.com/car/mileage3',{
             
     headers:{
         "Authorization":`Bearer ${localStorage.getItem("token")}`
