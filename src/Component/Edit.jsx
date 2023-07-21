@@ -43,7 +43,7 @@ export function Edit() {
 
         
         fetch(`https://backend-done.onrender.com/car/update/${id}`,{
-            method:"PATCH",
+            method:"PUT",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,
                "Content-Type":"application/json"
@@ -53,13 +53,13 @@ export function Edit() {
         .then(res=>res.json())
         .then(res=>{console.log(res)
             toast({
-                title: 'Car data has been Added',
+                title: 'Car data has been updated',
                 position: 'top',
                 status: 'success',
                 duration: 4000,
                 isClosable: true,
               })
-              navigate("/")
+              navigate("/car")
         })
         .catch(err=>console.log(err))
     };

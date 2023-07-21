@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import style from  "../Style/Car.module.css"
 import {DeleteIcon} from "@chakra-ui/icons"
 import CarCard from './CarCard'
+import { Edit } from './Edit'
 const Dasboard = () => {
     let [data,setData]=useState("")
     let [email,setEmail]=useState("")
@@ -256,6 +257,7 @@ navigate("/login")
    data.map((el,index)=>{
     return <div   
 >       <CarCard key={el.id} {...el}/>
+
     </div>
    })}
    </div>
