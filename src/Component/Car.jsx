@@ -5,6 +5,7 @@ import style from  "../Style/Car.module.css"
 import {DeleteIcon} from "@chakra-ui/icons"
 import CarCard from './CarCard'
 import { Edit } from './Edit'
+
 const Dasboard = () => {
     let [data,setData]=useState("")
     let [email,setEmail]=useState("")
@@ -31,7 +32,7 @@ const Dasboard = () => {
         
 
         
-        fetch("https://backend-done.onrender.com/car/cadd",{
+        fetch("https://backend-done.onrender.com/car/add",{
             method:"POST",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,

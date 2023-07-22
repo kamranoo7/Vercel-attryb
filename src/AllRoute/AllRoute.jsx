@@ -8,6 +8,7 @@ import Addcar from '../Component/Addcar'
 import Enventory from '../Component/Enventory'
 import OemModel from '../Component/OemModel'
 
+
 const AllRoute = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const AllRoute = () => {
         <Route path="/" element={<Home/>} >
 
         </Route>
+        
         <Route path="/enventory" element={<Enventory/>}></Route>
         <Route path="/car" element={<Car/>}></Route>
         <Route path='/addcar' element={<Addcar/>}></Route>

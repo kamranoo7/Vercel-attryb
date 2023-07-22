@@ -2,15 +2,17 @@ import { EditIcon } from "@chakra-ui/icons"
 import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-export function Edit() {
+export function Edit(props) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     let [email,setEmail]=useState("")
+    let [id,setId]=useState(props.id)
     let [data,setData]=useState("")
-    let [title,setTitle]=useState("")
-    let [mileage,setMileage]=useState("")
-    let [price,setPrice]=useState("")
-    let [color,setColor]=useState("")
-    let [image,setImage]=useState("")
+    let [title,setTitle]=useState(props.title)
+    let [mileage,setMileage]=useState(props.mileage)
+    let [price,setPrice]=useState(props.price)
+    let [color,setColor]=useState(props.color)
+    let [image,setImage]=useState(props.image)
+    let [selectedfile,setSelectedFile]=useState("")
     let navigate=useNavigate()
    //let token=JSON.parse(localStorage.getItem("token"))
   let toast=useToast()
@@ -29,7 +31,7 @@ export function Edit() {
     .catch(err=>console.log(err))
     }
 //Edit
-    let handleSubmit=(id)=>{
+    let handleSubmit=()=>{
         let payload={
             color,
           title,
@@ -43,7 +45,7 @@ export function Edit() {
 
         
         fetch(`https://backend-done.onrender.com/car/update/${id}`,{
-            method:"PUT",
+            method:"PATCH",
             headers:{
                "Authorization":`Bearer ${localStorage.getItem("token")}`,
                "Content-Type":"application/json"
@@ -59,6 +61,7 @@ export function Edit() {
                 duration: 4000,
                 isClosable: true,
               })
+              window.location.reload()
               navigate("/car")
         })
         .catch(err=>console.log(err))
@@ -87,7 +90,7 @@ export function Edit() {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Image</FormLabel>
-              <Input ref={initialRef} placeholder='image url' type="text" value={image} onChange={(e)=>setImage(e.target.value)} />
+              <Input ref={initialRef} placeholder='image url' type="text" name="image" value={image} onChange={(e)=>setImage(e.target.value)} />
             </FormControl>
 
             <FormControl mt={4}>
@@ -109,16 +112,13 @@ export function Edit() {
           </ModalBody>
 
           <ModalFooter>
-           {data.length>0&&
-           data.map((el)=>{
-            return <div>
+          
                <Button colorScheme='blue' mr={3} onClick={()=>{
-                handleSubmit(el._id)
+                handleSubmit()
                }}>
               Save
             </Button>
-            </div>
-           })}
+            
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
         </ModalContent>

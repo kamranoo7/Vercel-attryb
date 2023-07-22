@@ -35,7 +35,7 @@ const CarCard = ({image,title,description,price,mileage,color,_id}) => {
         <h5 style={{fontWeight:"500"}}>Color:-{color}</h5>
         <div style={{display:"flex",gap:"20px",marginTop:"10px",alignItems:"center"}}>
             <DeleteIcon onClick={()=>deleteData(_id)}/>
-           <Edit />
+           <Edit id={_id} title={title} image={image} price={price} mileage={mileage} color={color} />
           <Button style={
             {
               backgroundColor:"#a9cbc0"
